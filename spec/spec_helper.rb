@@ -13,9 +13,9 @@ end
 require "rspec/its"
 require_relative "support/simplecov"
 
-require "foobara/big_decimal"
+require "foobara/types/big_decimal"
 
-Foobara.install!
+Foobara.start!
 
 RSpec.configure do |config|
   config.filter_run_when_matching :focus

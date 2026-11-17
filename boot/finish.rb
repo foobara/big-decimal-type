@@ -13,7 +13,7 @@ skip = ["start.rb", "finish.rb", *first, *last]
 first.each { |f| require_relative f if File.exist?("#{__dir__}/#{f}") }
 # simplecov:enable
 
-require "foobara/big_decimal_type"
+require "foobara/types/big_decimal"
 
 Dir.entries(__dir__).each do |boot_file|
   next unless boot_file.end_with?(".rb")

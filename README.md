@@ -1,29 +1,42 @@
-# 
+# big_decimal Foobara type
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library
-into a gem. Put your Ruby code in the file `lib/foobara/big_decimal_type.rb`. To experiment with that code,
-run `bin/console` for an interactive prompt.
-
+Provides a Foobara type for big_decimal
 
 ## Installation
 
 Typical stuff: add `gem "foobara-big-decimal-type"` to your Gemfile or .gemspec file. Or even just
-`gem install foobara-big-decimal-type` if just playing with it directly in scripts.
+`gem install foobara-big-decimal-type` if playing with it directly in scripts.
 
 ## Usage
 
-TODO: Write usage instructions here
+A pretty basic usage example in a one-off script using a Gemfile:
 
 ```ruby
 #!/usr/bin/env ruby
 
-require "foobara/load_dotenv"
-Foobara::LoadDotenv.run!(dir: __dir__)
+require "bundler/setup"
+require "foobara/all"
+require "foobara/types/big_decimal"
 
-TODO: some example code
+class Capybara < Foobara::Model
+  attributes do
+    leg_count :big_decimal, :required, default: 4
+  end
+end
+
+fumiko = Capybara.new(leg_count: 3)
+
+puts fumiko.leg_count
+puts fumiko.leg_count.class
 ```
+
+This outputs:
+
+```
+3
+BigDecimal
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub

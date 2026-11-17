@@ -13,4 +13,6 @@ module Foobara
   end
 end
 
-Foobara.project("big_decimal", project_path: "#{__dir__}/../..")
+Foobara.project "big_decimal",
+                project_path: "#{__dir__}/../../..",
+                require_path: "foobara/types/big_decimal"

@@ -1,9 +1,11 @@
 require_relative "version"
 
 source "https://rubygems.org"
-ruby Foobara::BigDecimalType::MINIMUM_RUBY_VERSION
+ruby Foobara::BigDecimal::MINIMUM_RUBY_VERSION
 
 gemspec
+
+# gem "foobara", path: "../foobara"
 
 gem "foobara-dotenv-loader", "< 2.0.0"
 
@@ -31,6 +33,4 @@ group :test do
   gem "rspec-its"
   gem "ruby-prof"
   gem "simplecov"
-  gem "vcr"
-  gem "webmock"
 end
